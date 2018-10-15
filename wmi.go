@@ -285,7 +285,7 @@ func (c *Client) loadEntity(dst interface{}, src *ole.IDispatch) (errFieldMismat
 		}
 		defer prop.Clear()
 
-		if prop.Value() == nil {
+		if prop.VT == ole.VT_NULL {
 			continue
 		}
 
